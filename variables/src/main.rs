@@ -1,24 +1,20 @@
-fn identifiers() {
+fn ex_identifiers() {
+    println!("<- Identifiers ->");
+
     // this is not an appropriate identifier
     let _ = "_";
     let __ = 10;
     // this is a raw identifier, 'match' is a keyword in Rust
     let r#match = "match";
-
-    println!("Identifiers\n/*");
-
     println!("match: {}", r#match);
     println!("__: {}", __);
-
     /* This will throw an error, expected expression
        "_" is not appropriate identifier */
     // println!("_: {}", _);
-    println!("*/")
 }
 
-fn main() {
-    identifiers();
-
+fn ex_mutability() {
+    println!("<- Mutability ->");
     let x = 5;
     let mut y = 10;
     println!("x is {}", x);
@@ -33,5 +29,29 @@ fn main() {
     println!("y is {}", y);
     y = 12;
     println!("y is now {}", y);
+}
 
+fn ex_constants() {
+    println!("<- Constants ->");
+    const MAX_POINTS: u32 = 100_000;
+    println!("MAX_POINTS is a const of {}", MAX_POINTS);
+}
+
+fn ex_shadowing() {
+    println!("<- Shadowing ->");
+    let val = 5;
+    println!("val is {}", val);
+
+    let val = val + 1;
+    println!("val is now {}", val);
+
+    let val = val * 2;
+    println!("val is now {}", val);
+}
+
+fn main() {
+    ex_identifiers();
+    ex_mutability();
+    ex_constants();
+    ex_shadowing();
 }
