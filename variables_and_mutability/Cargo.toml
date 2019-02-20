@@ -1,7 +1,0 @@
-[package]
-name = "variables_and_mutability"
-version = "0.1.0"
-authors = ["Kevin Welch <kaedub16@gmail.com>"]
-edition = "2018"
-
-[dependencies]
