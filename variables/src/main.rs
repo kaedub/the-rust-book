@@ -47,6 +47,18 @@ fn ex_shadowing() {
 
     let val = val * 2;
     println!("val is now {}", val);
+
+    let spaces = "   ";
+    println!("spaces is {}.", spaces);
+    let spaces = spaces.len();
+    println!("spaces is now {}.", spaces);
+
+
+    // warning: variable does not need to be mutable
+    let mut mut_spaces = "   ";
+    println!("mut_paces is {}.", mut_spaces);
+    let mut_spaces = mut_spaces.len();
+    println!("mut_paces is now {}.", mut_spaces);
 }
 
 fn main() {
