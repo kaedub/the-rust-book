@@ -27,6 +27,10 @@ fn main() {
     println!("{} {} {}", c,z,boom);
 
 
+    // Compound Types
+    compounds::ex_compounds();
+
+
 
 
 
