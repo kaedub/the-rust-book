@@ -18,10 +18,18 @@ fn main() {
     let s3 = takes_and_gives_back(s2);  // s2 is moved into
                                         // takes_and_gives_back, which also
                                         // moves its return value into s3
+    let s = String::from("hello");
+
+    change(&s); 
 } // Here, x goes out of scope, then s. But because s's value was moved, nothing
   // special happens.
   // Here, s3 goes out of scope and is dropped. s2 goes out of scope but was
   // moved, so nothing happens. s1 goes out of scope and is dropped.
+
+fn change(some_string: &String) {
+    // `some_string` is a `&` reference, so the data it refers to cannot be borrowed as mutable
+    // some_string.push_str(", world");
+}
 
 fn takes_ownership(some_string: String) { // some_string comes into scope
     println!("{}", some_string);
